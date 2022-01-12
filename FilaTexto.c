@@ -29,9 +29,9 @@ int inserir_fila(FilaTexto *f, char *texto) {
   int fim = f->fim;
 
   if (fila_cheia(f)) {
-    printf("fila cheia! %d %d %s %s\n", f->ini, f->fim, f->v[f->fim], texto);
     return -1;
   }
+
 
   f->v[fim] = texto;
   f->fim = inc(f->fim);
@@ -73,14 +73,14 @@ int fila_cheia(FilaTexto *f) {
 }
 
 void imprimir_fila(FilaTexto *f) {
-  int i = f->ini;
+  int pos = f->ini;
+  int i;
   printf("ini [ ");
 
-  // while (i != f->fim) {
-  for (i = 0; i < TAM; i++) {
-    printf(" (%s) ", f->v[i]);
+  for (i = 0; i < f->qt; i++) {
+    printf(" (%s) ", f->v[pos]);
 
-    // i = inc(i);
+    pos = inc(pos);
   }
 
   printf(" ] fim\n");

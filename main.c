@@ -23,6 +23,15 @@ int main(void) {
 
   imprimir_fila(f);
 
+  remover_fila(f);
+  remover_fila(f);
+  remover_fila(f);
+  remover_fila(f);
+  remover_fila(f);
+  remover_fila(f);
+  
+  imprimir_fila(f);
+
   destruir_fila(f);
   
   return 0;
